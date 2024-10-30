@@ -1,83 +1,134 @@
-<<<<<<< HEAD
-const descobrirBtn = document.getElementById('descobrir-btn');
-const pesquisaContainer = document.getElementById('pesquisa-container');
-const botaoPesquisar = document.getElementById('pesquisar');
+    const descobrirBtn = document.getElementById('descobrir-btn');
+    const pesquisaContainer = document.getElementById('pesquisa-container');
+    const botaoPesquisar = document.querySelector(".botao-pesquisar");
+    const anoInput = document.getElementById("ano");
+    const bairroInput = document.getElementById("bairro");
+    const content = document.querySelector(".content");
+    const inputSearch = document.querySelector("input[type='search']");
 
-if (descobrirBtn && pesquisaContainer) {
-    descobrirBtn.addEventListener('click', () => {
-        descobrirBtn.style.transition = 'opacity 0.5s ease';
-        descobrirBtn.style.opacity = '0';
+    let isLoggedIn = false; // ta no false colocar no true dps
 
-        setTimeout(() => {
-            descobrirBtn.style.display = 'none'; // Oculta o botão
-            pesquisaContainer.classList.add('visible'); // Mostra o container de pesquisa
-        }, 500); 
+    if (descobrirBtn && pesquisaContainer) {
+        descobrirBtn.addEventListener('click', () => {
+            descobrirBtn.style.transition = 'opacity 0.5s ease';
+            descobrirBtn.style.opacity = '0';
+
+            setTimeout(() => {
+                descobrirBtn.style.display = 'none'; 
+                pesquisaContainer.classList.add('visible'); 
+            }, 500);
+        });
+    } else {
+        console.error("Erro: Não foi possível encontrar os elementos do botão ou container de pesquisa.");
+    }
+
+    function mostrarErro(messageId) {
+        document.getElementById('pesquisaMsg').style.display = 'none';
+        document.getElementById('loginMsg').style.display = 'none';
+    
+        const message = document.getElementById(messageId);
+        if (message) {
+            message.style.display = 'block';
+            $('#modalErro').modal('show'); 
+        }
+    }
+    
+    function esconderErro(messageId) {
+        const message = document.getElementById(messageId);
+        if (message) {
+            message.style.display = 'none';
+            $('#modalErro').modal('hide');
+        }
+    }
+    
+    function irParaLogin() {
+        window.location.href = 'login.html'; 
+    }
+    let bairros = [
+        "Agua Rasa", "Alto De Pinheiros", "Anhanguera", "Aricanduva", "Artur Alvim", 
+        "Barra Funda", "Bela Vista", "Belem", "Bom Retiro", "Bras", 
+        "Brasilândia", "Butantã", "Cachoeirinha", "Cambuci", "Campo Belo", 
+        "Campo Grande", "Campo Limpo", "Cangaíba", "Capão Redondo", "Carrão", 
+        "Casa Verde", "Cidade Ademar", "Cidade Dutra", "Cidade Líder", "Cidade Tiradentes", 
+        "Consolação", "Cursino", "Ermelino Matarazzo", "Freguesia Do Ó", "Grajau", 
+        "Guaianases", "Iguatemi", "Ipiranga", "Itaim Bibi", "Itaim Paulista", 
+        "Itaquera", "Jabaquara", "Jacanã", "Jaguara", "Jaguare", 
+        "Jaraguá", "Jardim Angela", "Jardim Helena", "Jardim Paulista", "Jardim São Luis", 
+        "José Bonifácio", "Lajeado", "Lapa", "Liberdade", "Limao", 
+        "Mandaqui", "Marsilac", "Moema", "Mooca", "Morumbi", 
+        "Parelheiros", "Pari", "Parque Do Carmo", "Pedreira", "Penha", 
+        "Perdizes", "Perus", "Pinheiros", "Pirituba", "Ponte Rasa", 
+        "Raposo Tavares", "República", "Rio Pequeno", "Sacomã", "Santa Cecília", 
+        "Santana", "Santo Amaro", "São Domingos", "São Lucas", "São Mateus", 
+        "São Miguel", "São Rafael", "Sapopemba", "Saúde", "Sé", 
+        "Socorro", "Tatuapé", "Tremembé", "Tucuruvi", "Vila Andrade", 
+        "Vila Curuca", "Vila Formosa", "Vila Guilherme", "Vila Jacuí", "Vila Leopoldina", 
+        "Vila Maria", "Vila Mariana", "Vila Matilde", "Vila Medeiros", "Vila Prudente", 
+        "Vila Sônia"
+    ];
+
+    const datalistbairros = document.getElementById("lista-bairros");
+    bairros.forEach(bairro => {
+        const option = document.createElement("option");
+        option.value = bairro;
+        datalistbairros.appendChild(option);
     });
-} else {
-    console.error("Erro: Não foi possível encontrar os elementos do botão ou container de pesquisa.");
-}
 
-if (botaoPesquisar) {
+    // botão Pesquisar
     botaoPesquisar.addEventListener('click', () => {
-        const anoSelecionado = document.getElementById('ano').value;
-        const bairroDigitado = document.getElementById('bairro').value;
+        const anoSelecionado = anoInput.value;
+        const bairroSelecionado = bairroInput.value;
 
-        if (anoSelecionado && bairroDigitado) {
-            window.location.href = `mapa.html?ano=${anoSelecionado}&bairro=${bairroDigitado}`;
+        if (anoSelecionado && bairroSelecionado) {
+            window.location.href = `mapa.html?ano=${anoSelecionado}&bairro=${bairroSelecionado}`;
         } else {
-            alert('Por favor, selecione um ano e digite um bairro.');
+            alert('Selecione um ano e um bairro.');
         }
     });
-}
 
-let isLoggedIn = false; // Ta no falso colocar true dps
+    // Filtro de bairros
+    inputSearch.oninput = () => {
+        const valorPesquisa = inputSearch.value.toLowerCase();
+        content.innerHTML = ""; // Limpa os resultados anteriores
+        
+        bairros
+            .filter(item => item.toLowerCase().includes(valorPesquisa))
+            .forEach(item => addHTML(item));
+    };
 
-function exportarMapaHTML() {
-    const anoSelecionado = document.getElementById("ano").value;
-    const bairroDigitado = document.getElementById("bairro").value.trim();
-
-    if (!anoSelecionado || !bairroDigitado) {
-        document.getElementById("pesquisaMsg").style.display = "block";
-        return;
+    function addHTML(item) {
+        const div = document.createElement("div");
+        div.className = "resultado";
+        div.innerHTML = item; 
+        content.append(div); 
     }
-    document.getElementById("pesquisaMsg").style.display = "none";
 
-    if (!isLoggedIn) {
-        document.getElementById("loginMsg").style.display = "block";
-        return;
+    function exportarMapaHTML() {
+        const anoSelecionado = anoInput.value;
+        const bairroDigitado = bairroInput.value.trim();
+
+        if (!anoSelecionado || !bairroDigitado) {
+            pesquisaMsg.style.display = "block";
+            return;
+        }
+        pesquisaMsg.style.display = "none";
+
+        if (!isLoggedIn) {
+            loginMsg.style.display = "block";
+            return;
+        }
+
+        exportarMapaComoImagem();
     }
 
-    exportarMapaComoImagem();
-}
+    function exportarMapaComoImagem() {
+        const mapaElement = document.getElementById("mapa");
+        html2canvas(mapaElement).then(function(canvas) {
+            const imgData = canvas.toDataURL("image/png");
 
-function exportarMapaComoImagem() {
-    const mapaElement = document.getElementById("mapa");
-    html2canvas(mapaElement).then(function(canvas) {
-        // Converte para imagem
-        const imgData = canvas.toDataURL("image/png");
-
-        // Cria um link 
-        const link = document.createElement("a");
-        link.href = imgData;
-        link.download = "mapa.png";
-        link.click(); 
-    });
-=======
-const descobrirBtn = document.getElementById('descobrir-btn');
-const pesquisaContainer = document.getElementById('pesquisa-container');
-
-if (descobrirBtn && pesquisaContainer) {
-    descobrirBtn.addEventListener('click', () => {
-        descobrirBtn.style.transition = 'opacity 0.5s ease';
-        descobrirBtn.style.opacity = '0';
-
-        setTimeout(() => {
-            descobrirBtn.style.display = 'none'; // Oculta o botão
-            pesquisaContainer.classList.add('visible'); // Mostra o container de pesquisa
-            pesquisaContainer.classList.add('visible'); 
-        }, 500); 
-    });
-} else {
-    console.error("Erro: Não foi possível encontrar os elementos do botão ou container de pesquisa.");
->>>>>>> 636b0d75fb012c7ec2c7027233006f09c1eeebf8
-}
+            const link = document.createElement("a");
+            link.href = imgData;
+            link.download = "mapa.png";
+            link.click(); 
+        });
+    }
