@@ -159,3 +159,79 @@ input[type="checkbox"] {
     cursor: pointer; 
     accent-color: #000000;
 }
+
+/* Responsividade */
+
+/* Celular pequeno (até 480px) */
+@media (max-width: 480px) {
+    .text-content h1 {
+        font-size: 24px;
+    }
+    .text-content p,
+    .login-container p {
+        font-size: 14px;
+    }
+    .botao-login, .botao-google {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .text-container,
+    .login-container {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Celular maior e tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .text-content h1 {
+        font-size: 32px;
+    }
+    .text-content p,
+    .login-container p {
+        font-size: 18px;
+    }
+    .botao-login, .botao-google {
+        font-size: 14px;
+        padding: 12px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .text-container,
+    .login-container {
+        width: 100%;
+        padding: 40px;
+    }
+}
+
+/* Laptops e desktops menores (769px a 1279px) */
+@media (min-width: 769px) and (max-width: 1279px) {
+    .text-content h1 {
+        font-size: 40px;
+    }
+    .text-content p,
+    .login-container p {
+        font-size: 20px;
+    }
+    .botao-login, .botao-google {
+        font-size: 15px;
+        padding: 14px;
+    }
+}
+
+/* Desktops maiores (1280px e acima) */
+@media (min-width: 1280px) {
+    .text-content h1 {
+        font-size: 48px;
+    }
+    .text-content p {
+        font-size: 24px;
+    }
+    .login-container h2 {
+        font-size: 28px;
+    }
+}
