@@ -159,7 +159,7 @@ button.Descobrir {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-#pesquisa-container input[type="text"] {
+#pesquisa-container input[type="search"] {
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -169,7 +169,7 @@ button.Descobrir {
     transition: all 0.3s ease;
 }
 
-#pesquisa-container input[type="text"]:focus {
+#pesquisa-container input[type="search"]:focus {
     outline: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -188,60 +188,6 @@ button.Descobrir {
 .botao-pesquisar:hover {
     background-color: rgba(0, 0, 0, 0.1);
     color: #FFFFFF;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5); 
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1050;
-}
-
-.modal {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-}
-
-.erros {
-    background-color: #E63946; 
-    border-radius: 20px;
-    color: #FFFFFF;
-    text-align: center; 
-    padding: 40px 20px; 
-    width: 250px; 
-    margin: 20px auto; 
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-    position: relative; 
-}
-
-.ft-erro {
-    width: 48px; 
-    height: 48px; 
-    margin-bottom: 10px; 
-}
-
-.erros p {
-    font-size: 18px; 
-    font-weight: bold; 
-    margin: 0; 
-}
-
-.button-group {
-    display: flex;
-    justify-content: space-between; 
-    margin-top: 20px; 
 }
 
 .fechar, .login-dir {
@@ -358,10 +304,11 @@ button.Descobrir {
 .contato-footer {
     position: relative;
     background-color: #000;
-    padding: 20px;
+    padding: 1px;
     color: #fff;
     text-align: center;
-    height: 160px;
+   /* height: 180px;  */
+    height: auto;
     overflow: hidden;
 }
 
@@ -369,9 +316,9 @@ button.Descobrir {
     color: #000;
     background-color: #fff;
     font-size: 28px;
-    margin-top: 8px;
+    margin-top: -1px;
     border-radius: 23px;
-    padding: 10px;
+    padding: 5px;
     display: inline-block;
 }
 
@@ -382,16 +329,16 @@ button.Descobrir {
     bottom: 0;
     transform: translateX(-50%);
     width: 75px;
-    height: 100%;
+    height: 90%;
 }
 
 .info-contato {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     align-items: center;
     font-size: 10px;
-    margin-top: -80px;
+    margin-top: 2px;
 }
 
 .frasezinha {
@@ -401,8 +348,143 @@ button.Descobrir {
     margin: 15px 0 25px;
 }
 
-.email-contato,
-.instagram-contato {
+.logo-footer {
+    border-radius: 20px;
+    width: 6%;
+    margin-right: 85%;
+    top: 10px;
+}
+
+.icon-email,
+.logo-instagram {
     color: #FFFFFF;
     text-decoration: none;
+    width: 10%;
+    height: auto;
+    display: inline-block;
+}
+
+/* Responsividade */
+
+/* Celulares pequenos: 0-480px */
+@media (max-width: 480px) {
+    .banner {
+        height: 50vh;
+    }
+    .banner h1 {
+        font-size: 24px;
+    }
+    .banner p {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .navigation-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .navigation-bar .nav-item {
+        font-size: 10px;
+        margin: 5px 0;
+    }
+    .setinhas-container {
+        padding-right: 0;
+        gap: 5px;
+    }
+    button.Descobrir {
+        font-size: 6pt;
+        padding: 5px 15px;
+        margin-right: 0;
+    }
+    .sobre-nos-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .contato-footer {
+        padding: 15px;
+    }
+    .frasezinha {
+        font-size: 0.9rem;
+    }
+}
+
+/* Celulares maiores e tablets: 481-768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .banner {
+        width: 100%;
+        height: 70vh;
+    }
+    .banner h1 {
+        font-size: 32px;
+    }
+    .banner p {
+        font-size: 20px;
+        margin-right: 50px;
+    }
+    button.Descobrir {
+        font-size: 7pt;
+        padding: 8px 20px;
+        margin-right: 50px;
+    }
+    .navigation-bar .nav-item {
+        font-size: 12px;
+        margin: 0 10px;
+    }
+    .logo {
+        left: 15px;
+    }
+}
+
+/* Laptops e desktops menores: 769-1279px */
+@media (min-width: 769px) and (max-width: 1279px) {
+    .banner h1 {
+        font-size: 48px;
+    }
+    .banner p {
+        font-size: 24px;
+    }
+    .setinhas-container {
+        padding-right: 600px;
+    }
+    button.Descobrir {
+        font-size: 8pt;
+        padding: 10px 30px;
+        margin-right: 600px;
+    }
+    .navigation-bar {
+        padding: 20px;
+    }
+}
+
+/* Desktops maiores: 1280px e acima */
+@media (min-width: 1280px) {
+    .banner {
+        height: 80vh;
+    }
+    .banner h1 {
+        font-size: 56px; 
+    }
+    .banner p {
+        font-size: 28px;
+        margin-right: 100px; 
+    }
+    .setinhas-container {
+        padding-right: 700px;
+        gap: 20px;
+    }
+    button.Descobrir {
+        font-size: 10pt;
+        padding: 12px 35px;
+        margin-right: 700px; 
+    }
+    .navigation-bar {
+        padding: 30px; 
+    }
+    .navigation-bar .nav-item {
+        font-size: 14px; 
+        margin: 0 15px;
+    }
+    .logo {
+        left: 20px; 
+    }
 }

@@ -42,35 +42,9 @@
         <div id="bairros-htmls"></div>
     </div>
 
-    
     <!-- Erros -->
-    <div class="modal fade" id="modalErro" tabindex="-1" role="dialog" aria-labelledby="modalErroLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalErroLabel">Erro</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModalErro()">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="erros" id="pesquisaMsg" style="display: none;">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvccsbLPGv2t6ZlDHmr3nyUGVLytzZ_iGKIw&s" alt="Ícone de erro" class="ft-erro">
-                        <p>Selecione um ano e digite um bairro.</p>
-                        <button class="fechar" onclick="fecharMensagem('pesquisaMsg')">Ok</button>
-                    </div>
-    
-                    <div class="erros" id="loginMsg" style="display: none;">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvccsbLPGv2t6ZlDHmr3nyUGVLytzZ_iGKIw&s" alt="Ícone de erro" class="ft-erro">
-                        <p>Você precisa estar logado para exportar o mapa.</p>
-                        <div class="button-group">
-                            <button class="login-dir" onclick="irParaLogin()">Fazer Login</button>
-                            <button class="fechar" onclick="fecharMensagem('loginMsg')">Fechar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="pesquisaMsg" style="display: none; color: black;">Selecione um ano e digite um bairro.</div>
+        <div id="loginMsg" style="display: none; color: black;">Você precisa estar logado para exportar o mapa.</div>
     </div>
 
     <!-- Brarra de nav -->
@@ -99,12 +73,13 @@
             <h3>Entre em Contato!</h3>
             <img src="https://i.postimg.cc/Hnxn3wZD/linha-divisora-CERTA.png" class="linha-divisora">
             <img src="https://i.postimg.cc/VshZBmnZ/Logo-da-Gio-em-png.png" alt="Logo Safe house" class="logo-footer">
-            <p class="frasezinha">"Conecte-se com quem quer transformar o mundo. Fale com a gente!"</p>
+            <p class="frasezinha">"Duvidas? Fale conosco!"</p>
             <div class="info-contato">
                 <div class="email-contato">
                     <img src="https://i.postimg.cc/vBvX5sj2/logo-email-sem-fund.png" alt="E-mail" class="icon-email">
-                    <p>contact@safehouse.com</p>
+                    <span style="color: white;">contact@safehouse.com</span>
                 </div>
+                
                 <div class="instagram-contato">
                     <a href="https://instagram.com/aati.unisantos?igshid=MzRlODBiNWFlZA==" target="_blank">
                         <img src="https://i.postimg.cc/zXxSJpZW/instagram-new-1.png" alt="Instagram" class="logo-instagram">
