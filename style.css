@@ -372,87 +372,117 @@ button.Descobrir {
         height: 50vh;
     }
     .banner h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     .banner p {
-        font-size: 16px;
-        margin-right: 20px;
+        font-size: 1rem;
+        margin: 0.625rem;
+    }
+    button.Descobrir {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+    .setinhas-container {
+        gap: 0.3125rem;
     }
     .navigation-bar {
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 0.625rem;
     }
     .navigation-bar .nav-item {
-        font-size: 10px;
-        margin: 5px 0;
+        font-size: 0.75rem;
+        margin: 0.3125rem 0;
     }
-    .setinhas-container {
-        padding-right: 0;
-        gap: 5px;
+    .login-cadastrase-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3125rem;
     }
-    button.Descobrir {
-        font-size: 6pt;
-        padding: 5px 15px;
-        margin-right: 0;
+    .botao-login,
+    .botao-cadastrar-se {
+        font-size: 0.75rem;
+        padding: 0.3125rem 0.625rem;
     }
     .sobre-nos-container {
-        padding: 20px;
-        max-width: 90%;
+        padding: 1.25rem;
+    }
+    .sobre-nos-container h2 {
+        font-size: 1.75rem;
+    }
+    .sobre-nos-container p {
+        font-size: 0.875rem;
     }
     .contato-footer {
-        padding: 15px;
+        padding: 0.9375rem;
     }
-    .frasezinha {
-        font-size: 0.9rem;
+    .contato-footer h3 {
+        font-size: 1.125rem;
     }
 }
 
 /* Celulares maiores e tablets: 481-768px */
 @media (min-width: 481px) and (max-width: 768px) {
     .banner {
-        width: 100%;
-        height: 70vh;
+        height: 60vh;
     }
     .banner h1 {
-        font-size: 32px;
+        font-size: 2rem;
     }
     .banner p {
-        font-size: 20px;
-        margin-right: 50px;
+        font-size: 1.125rem;
+        margin: 0.9375rem;
     }
     button.Descobrir {
-        font-size: 7pt;
-        padding: 8px 20px;
-        margin-right: 50px;
+        font-size: 0.875rem;
+        padding: 0.5rem 1.125rem;
     }
     .navigation-bar .nav-item {
-        font-size: 12px;
-        margin: 0 10px;
+        font-size: 0.875rem;
+        margin: 0 0.625rem;
     }
-    .logo {
-        left: 15px;
+    .login-cadastrase-container {
+        gap: 0.5rem;
+    }
+    .sobre-nos-container {
+        padding: 2.5rem 3.75rem;
+    }
+    .sobre-nos-container h2 {
+        font-size: 2rem;
+    }
+    .sobre-nos-container p {
+        font-size: 1rem;
+    }
+    .contato-footer {
+        padding: 1.25rem;
     }
 }
 
 /* Laptops e desktops menores: 769-1279px */
 @media (min-width: 769px) and (max-width: 1279px) {
     .banner h1 {
-        font-size: 48px;
+        font-size: 2.5rem;
     }
     .banner p {
-        font-size: 24px;
-    }
-    .setinhas-container {
-        padding-right: 600px;
-    }
-    button.Descobrir {
-        font-size: 8pt;
-        padding: 10px 30px;
-        margin-right: 600px;
+        font-size: 1.375rem;
     }
     .navigation-bar {
-        padding: 20px;
+        padding: 1.25rem;
+    }
+    .navigation-bar .nav-item {
+        font-size: 1rem;
+    }
+    .sobre-nos-container {
+        padding: 3.75rem;
+    }
+    .sobre-nos-container h2 {
+        font-size: 2.25rem;
+    }
+    .sobre-nos-container p {
+        font-size: 1.125rem;
+    }
+    .contato-footer {
+        padding: 1.5625rem;
     }
 }
 
@@ -462,29 +492,22 @@ button.Descobrir {
         height: 80vh;
     }
     .banner h1 {
-        font-size: 56px; 
+        font-size: 3rem;
     }
     .banner p {
-        font-size: 28px;
-        margin-right: 100px; 
-    }
-    .setinhas-container {
-        padding-right: 700px;
-        gap: 20px;
+        font-size: 1.5rem;
     }
     button.Descobrir {
-        font-size: 10pt;
-        padding: 12px 35px;
-        margin-right: 700px; 
+        font-size: 1rem;
+        padding: 0.625rem 1.25rem;
     }
-    .navigation-bar {
-        padding: 30px; 
+    .setinhas-container {
+        gap: 0.625rem;
     }
-    .navigation-bar .nav-item {
-        font-size: 14px; 
-        margin: 0 15px;
+    .sobre-nos-container {
+        padding: 5rem;
     }
-    .logo {
-        left: 20px; 
+    .contato-footer {
+        padding: 1.875rem;
     }
 }

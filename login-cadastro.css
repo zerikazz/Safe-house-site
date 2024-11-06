@@ -165,15 +165,15 @@ input[type="checkbox"] {
 /* Celular pequeno (até 480px) */
 @media (max-width: 480px) {
     .text-content h1 {
-        font-size: 24px;
+        font-size: 1.5rem; 
     }
     .text-content p,
     .login-container p {
-        font-size: 14px;
+        font-size: 0.875rem; 
     }
     .botao-login, .botao-google {
-        font-size: 12px;
-        padding: 10px;
+        font-size: 0.75rem; 
+        padding: 0.625rem; 
     }
     .container {
         flex-direction: column;
@@ -181,22 +181,28 @@ input[type="checkbox"] {
     .text-container,
     .login-container {
         width: 100%;
-        padding: 20px;
+        padding: 1.25rem; 
+    }
+
+    .loguinho {
+        width: 30%; 
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
     }
 }
 
 /* Celular maior e tablets (481px a 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
     .text-content h1 {
-        font-size: 32px;
+        font-size: 2rem; 
     }
     .text-content p,
     .login-container p {
-        font-size: 18px;
+        font-size: 1.125rem; 
     }
     .botao-login, .botao-google {
-        font-size: 14px;
-        padding: 12px;
+        font-size: 0.875rem;
+        padding: 0.75rem; 
     }
     .container {
         flex-direction: column;
@@ -204,34 +210,52 @@ input[type="checkbox"] {
     .text-container,
     .login-container {
         width: 100%;
-        padding: 40px;
+        padding: 2.5rem; 
+    }
+
+    .loguinho {
+        width: 20%; 
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
     }
 }
 
 /* Laptops e desktops menores (769px a 1279px) */
 @media (min-width: 769px) and (max-width: 1279px) {
     .text-content h1 {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
     .text-content p,
     .login-container p {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     .botao-login, .botao-google {
-        font-size: 15px;
-        padding: 14px;
+        font-size: 0.9375rem; 
+        padding: 0.875rem;
+    }
+
+    .loguinho {
+        width: 15%; 
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
     }
 }
 
 /* Desktops maiores (1280px e acima) */
 @media (min-width: 1280px) {
     .text-content h1 {
-        font-size: 48px;
+        font-size: 3rem; 
     }
     .text-content p {
-        font-size: 24px;
+        font-size: 1.5rem; 
     }
     .login-container h2 {
-        font-size: 28px;
+        font-size: 1.75rem; 
+    }
+
+    .loguinho {
+        width: 10%; 
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
     }
 }
