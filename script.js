@@ -74,6 +74,17 @@
         datalistbairros.appendChild(option);
     });
 
+     //bordas
+    function borda(input){
+        input.style.backgroundColor = '#ff9e81'
+        input.style.border = '1px solid red'
+    }
+
+    function bordaNormal(input){
+        input.style.backgroundColor = '#ffffff'
+        input.style.border = 'none'
+    }
+
     // botão Pesquisar
     botaoPesquisar.addEventListener('click', () => {
         const anoSelecionado = anoInput.value;
@@ -83,8 +94,23 @@
             window.location.href = `mapa.html?ano=${anoSelecionado}&bairro=${bairroSelecionado}`;
         } else {
             alert('Selecione um ano e um bairro.');
+            if (anoSelecionado == ""){
+                borda(anoInput);
+            }
+            if (bairroSelecionado == ""){
+                borda(bairroInput);
+            } 
         }
     });
+
+    anoInput.addEventListener('click', () => {
+        bordaNormal(anoInput);
+    });
+
+    bairroInput.addEventListener('click', () => {
+        bordaNormal(bairroInput);
+    });
+
 
     // Filtro de bairros
     inputSearch.oninput = () => {
