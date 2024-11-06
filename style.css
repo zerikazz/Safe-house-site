@@ -9,6 +9,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .banner {
@@ -281,22 +285,79 @@ button.Descobrir {
     color: #333;
     text-align: center;
     line-height: 1.6;
-}
-
-.sobre-nos-container p {
+  }
+  
+  .sobre-nos-container p {
     text-align: center;
     margin: 0 auto;
     line-height: 1.6;
     color: #2e2e2e;
     font-size: 28px;
-}
-
-.sobre-nos-container h2 {
+  }
+  
+  .sobre-nos-container h2 {
     font-weight: 700;
     color: #000;
     margin-bottom: 15px;
     font-size: 35px;
-}
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  
+  /* Galeria de Cards */
+  .galeria {
+    display: flex; 
+    align-items: stretch;
+    justify-content: space-between; 
+    gap: 1.25rem; 
+    flex-wrap: wrap; 
+    max-width: 100%; 
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    flex: 1 1 22%;  
+    max-width: 250px; 
+    height: 280px; 
+    transition: all 400ms;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .card > img {
+    display: block;
+    width: 100%;
+    height: 70%; 
+    object-fit: cover;
+  }
+  
+  .card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .galeria:hover .card:not(:hover) {
+    filter: grayscale(75%);
+  }
+  
+  .card:hover {
+    flex-grow: 2;
+    transform: scale(1.1);
+  }  
 
 /* Rodapé */
 
@@ -396,7 +457,7 @@ button.Descobrir {
     }
     .login-cadastrase-container {
         flex-direction: column;
-        align-items: center;
+        align-items: right;
         gap: 0.3125rem;
     }
     .botao-login,
