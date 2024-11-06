@@ -464,7 +464,7 @@ button.Descobrir {
     .botao-cadastrar-se {
         font-size: 0.75rem;
         padding: 0.3125rem 0.625rem;
-        aling-items: right;
+        align-items: right;
     }
     .sobre-nos-container {
         padding: 1.25rem;
