@@ -474,6 +474,19 @@ button.Descobrir {
     .sobre-nos-container p {
         font-size: 0.875rem;
     }
+    .galeria-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem; 
+        padding: 1rem;
+    }
+    .galeria-item {
+        width: 100%; 
+        transition: transform 0.3s ease;
+    }
+    .galeria-item:hover {
+        transform: scale(1.05);
+    }
     .contato-footer {
         padding: 0.9375rem;
     }
@@ -514,6 +527,19 @@ button.Descobrir {
     .sobre-nos-container p {
         font-size: 1rem;
     }
+    .galeria-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .galeria-item {
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+    .galeria-item:hover {
+        transform: scale(1.05);
+    }
     .contato-footer {
         padding: 1.25rem;
     }
@@ -542,6 +568,19 @@ button.Descobrir {
     .sobre-nos-container p {
         font-size: 1.125rem;
     }
+    .galeria-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .galeria-item {
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+    .galeria-item:hover {
+        transform: scale(1.05);
+    }
     .contato-footer {
         padding: 1.5625rem;
     }
@@ -567,6 +606,19 @@ button.Descobrir {
     }
     .sobre-nos-container {
         padding: 5rem;
+    }
+    .galeria-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        gap: 2.5rem;
+        padding: 2.5rem;
+    }
+    .galeria-item {
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+    .galeria-item:hover {
+        transform: scale(1.05);
     }
     .contato-footer {
         padding: 1.875rem;
