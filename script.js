@@ -113,9 +113,16 @@
             }
         } else {
             alert('Selecione um ano e um bairro.');
+            if (anoSelecionado == ""){
+                borda(anoInput);
+            }
+            if (bairroSelecionado == ""){
+                borda(bairroInput);
+            } 
         }
     });
 
+<<<<<<< HEAD
     //banner
     function alterarImagemBanner() {
         let bairroSelecionado = bairros[indiceAtual];
@@ -424,6 +431,17 @@
     
     atualizarImagem();
 
+=======
+    anoInput.addEventListener('click', () => {
+        bordaNormal(anoInput);
+    });
+
+    bairroInput.addEventListener('click', () => {
+        bordaNormal(bairroInput);
+    });
+
+
+>>>>>>> a30fd63cdf0eac269541f03c48ccac8540bf4a16
     // Filtro de bairros
     inputSearch.oninput = () => {
         const valorPesquisa = inputSearch.value.toLowerCase();
