@@ -1,4 +1,4 @@
-    const descobrirBtn = document.getElementById('descobrir-btn');
+const descobrirBtn = document.getElementById('descobrir-btn');
     const pesquisaContainer = document.getElementById('pesquisa-container');
     const botaoPesquisar = document.querySelector(".botao-pesquisar");
     const anoInput = document.getElementById("ano");
@@ -6,8 +6,8 @@
     const content = document.querySelector(".content");
     const inputSearch = document.querySelector("input[type='search']");
     const banner = document.getElementById('banner');
-    const setinhaEsquerda = document.getElementById('botao-setinha-esquerda');
-    const setinhaDireita = document.getElementById('botao-setinha-direita');
+    const setinhaEsquerda = document.querySelector('.botao-setinha-esquerda');
+    const setinhaDireita = document.querySelector('.botao-setinha-direita');
 
     let indiceAtual = 0;
 
@@ -88,6 +88,14 @@
         input.style.border = 'none'
     }
 
+    anoInput.addEventListener('click', () => {
+        bordaNormal(anoInput)
+    })
+
+    bairroInput.addEventListener('click', () => {
+        bordaNormal(bairroInput)
+    })
+
     // botão Pesquisar
     botaoPesquisar.addEventListener('click', () => {
         const anoSelecionado = anoInput.value;
@@ -122,54 +130,53 @@
         }
     });
 
-<<<<<<< HEAD
     //banner
     function alterarImagemBanner() {
         let bairroSelecionado = bairros[indiceAtual];
-        let imagemBairro = '';
+        let ismagemBairro = '';
         
         switch (bairroSelecionado) {
             case "Agua Rasa":
-                imagemBairro = 'https://link-da-imagem.com/aguarasa.jpg';
+                imagemBairro = 'https://www.atrbr.com/sp/agua_rasa/gifs/agua_rasa.jpg';
                 break;
             case "Alto De Pinheiros":
-                imagemBairro = 'https://link-da-imagem.com/altodepinheiros.jpg';
+                imagemBairro = 'https://www.eztec.com.br/wp-content/uploads/imoveis/sao-gualter/lazer/lindenberg-alto-de-pinheiros-voo-terraco.jpg';
                 break;
             case "Anhanguera":
-                imagemBairro = 'https://link-da-imagem.com/anhanguera.jpg';
+                imagemBairro = 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Distrito_Anhanguera_Dezembro_2022.jpg';
                 break;
             case "Aricanduva":
-                imagemBairro = 'https://link-da-imagem.com/aricanduva.jpg';
+                imagemBairro = 'https://grupospimovel.s3.amazonaws.com/Imagens/Noticias/Sistema/zonaleste/imoveis-aricanduva.jpg';
                 break;
             case "Artur Alvim":
-                imagemBairro = 'https://link-da-imagem.com/arturalvim.jpg';
+                imagemBairro = 'https://offloadmedia.feverup.com/saopaulosecreto.com/wp-content/uploads/2021/04/10044355/artur-alvim-1024x744.jpg';
                 break;
             case "Barra Funda":
-                imagemBairro = 'https://link-da-imagem.com/barrafunda.jpg';
+                imagemBairro = 'https://www.direcional.com.br/wp-content/uploads/2023/07/Barra-Funda.jpg';
                 break;
             case "Bela Vista":
-                imagemBairro = 'https://link-da-imagem.com/belavista.jpg';
+                imagemBairro = 'https://www.rivaincorporadora.com.br/wp-content/uploads/2024/01/bela-vista-sp.jpg';
                 break;
             case "Belem":
-                imagemBairro = 'https://link-da-imagem.com/belem.jpg';
+                imagemBairro = 'https://www.tiberio.com.br/wp-content/uploads/2021/09/morar-no-belem-e-bom-conheca-o-bairro-que-mais-cresce-em-sao-paulo-8b147e11aafb5ee33d8abe2df7e21b0c5bcee02f.jpg';
                 break;
             case "Bom Retiro":
-                imagemBairro = 'https://link-da-imagem.com/bomretiro.jpg';
+                imagemBairro = 'https://www.prefeitura.sp.gov.br/cidade/secretarias/subprefeituras/upload/se/imagens/noticias/Imagem1.jpg';
                 break;
             case "Bras":
-                imagemBairro = 'https://link-da-imagem.com/bras.jpg';
+                imagemBairro = 'https://imoveis.estadao.com.br/wp-content/uploads/2019/11/iStock-1015393512.jpg';
                 break;
             case "Brasilândia":
-                imagemBairro = 'https://link-da-imagem.com/brasilandia.jpg';
+                imagemBairro = 'https://vejasp.abril.com.br/wp-content/uploads/2019/03/brasilandia_-23.jpg.jpg?crop=1&resize=1212,909';
                 break;
             case "Butantã":
-                imagemBairro = 'https://link-da-imagem.com/butanta.jpg';
+                imagemBairro = 'https://d1o0fuw54avhiz.cloudfront.net/butanta_sao_paulo_capa_9bfc3db53b.png';
                 break;
             case "Cachoeirinha":
-                imagemBairro = 'https://link-da-imagem.com/cachoeirinha.jpg';
+                imagemBairro = 'https://portal.loft.com.br/wp-content/uploads/2023/11/como-e-morar-no-bairro-vila-nova-cachoeirinha-em-SP.jpg';
                 break;
             case "Cambuci":
-                imagemBairro = 'https://link-da-imagem.com/cambuci.jpg';
+                imagemBairro = 'https://urbay.com.br/i/960/600/bairros/cambuci-7007.jpg';
                 break;
             case "Campo Belo":
                 imagemBairro = 'https://link-da-imagem.com/campobelo.jpg';
@@ -427,21 +434,12 @@
     setinhaEsquerda.addEventListener('click', () => mudarImagem(-1));
     setinhaDireita.addEventListener('click', () => mudarImagem(1));
     
+    function atualizarImagem(){
+        alterarImagemBanner();
+    }
+
     document.getElementById('bairro').addEventListener('change', sincronizarComDropdown);
     
-    atualizarImagem();
-
-=======
-    anoInput.addEventListener('click', () => {
-        bordaNormal(anoInput);
-    });
-
-    bairroInput.addEventListener('click', () => {
-        bordaNormal(bairroInput);
-    });
-
-
->>>>>>> a30fd63cdf0eac269541f03c48ccac8540bf4a16
     // Filtro de bairros
     inputSearch.oninput = () => {
         const valorPesquisa = inputSearch.value.toLowerCase();

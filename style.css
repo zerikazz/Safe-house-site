@@ -2,6 +2,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+
 }
 
 body {
@@ -14,7 +16,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
-
+ 
 .banner {
     background-image: url('https://images.jota.info/wp-content/uploads/2018/05/7adb8b1ddf3616387c34bf88523cc302-scaled.jpg');
     background-repeat: no-repeat;
@@ -25,7 +27,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
     border-radius: 35px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -41,15 +42,19 @@ body {
     padding: 5px 10px;
 }
 
+
+
 /* Setinhas */
 .setinhas-container {
-    position: relative;
-    bottom: -90px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
     display: flex;
+
+    bottom: 20px;
+    left: 60%;
+    transform: translateX(-50%);
     gap: 10px;
-    padding-right: 1200px;
+
+    padding-right: 100%;
 }
 
 .botao-setinha-esquerda {
@@ -91,12 +96,15 @@ body {
 }
 
 h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
     font-size: 77px;
     margin: 0;
     margin-top: 90px;
 }
 
 p {
+    font-family: "Montserrat", sans-serif;
     font-size: 32px;
     margin: 0;
     margin-right: 332px;
@@ -113,7 +121,7 @@ button.Descobrir {
     border: none;
     cursor: pointer;
     margin-top: 45px;
-    margin-right: 900px;
+    margin-right: 80%;
 }
 
 .Descobrir:hover {
@@ -129,7 +137,7 @@ button.Descobrir {
     padding: 20px;
     border-radius: 10px;
     position: absolute;
-    top: 75%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -363,11 +371,10 @@ button.Descobrir {
 
 /* Contato */
 .contato-footer {
-    width: 100%;
+    width: 120%;
     position: relative;
     box-sizing: border-box;
     background-color: #000;
-    padding: 2rem;
     color: #fff;
     text-align: center;
     height: auto;
@@ -379,8 +386,8 @@ button.Descobrir {
 }
 
 .contato-footer h3 {
-    color: #000;
-    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffff;
     font-size: 28px;
     margin-top: -1px;
     border-radius: 23px;
@@ -410,7 +417,6 @@ button.Descobrir {
 
 .frasezinha {
     font-size: 1rem;
-    font-style: italic;
     color: #FFF;
     margin: 15px 0 25px;
 }
@@ -418,7 +424,7 @@ button.Descobrir {
 .logo-footer {
     border-radius: 20px;
     width: 6%;
-    margin-right: 85%;
+    margin-right: 8%;
     top: 10px;
 }
 
@@ -632,4 +638,10 @@ button.Descobrir {
     .contato-footer {
         padding: 1.875rem 5rem;
     }
+}
+
+footer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
